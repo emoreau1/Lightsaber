@@ -1,0 +1,51 @@
+body {
+    background: black;
+}
+
+#on-off {
+    position: absolute;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.hilt {
+    display: grid;
+    width: .75rem;
+    height: 7rem;
+    background: gray;
+    border-radius: 0 0 5em 5em;
+    cursor: pointer;
+}
+
+.lightsaber {
+    position: relative;
+    margin: 50%;
+}
+
+.blade {
+    position: absolute;
+    width: .75rem;
+    height: 18rem;
+    bottom: 7rem;
+    background: white;
+    border-radius: 5em 5em 0 0;
+    box-shadow: 0 0 4px hsl(240 100% 50% / 1),
+                0 0 1em hsl(240 100% 50% / .8),
+                0 0 1.5em hsl(240 100% 50% / .7),
+                0 0 2em hsl(240 100% 50% / .5),
+                0 0 3em hsl(240 100% 50% / .3),
+                0 0 5em hsl(240 100% 50% / .2);
+    
+
+    transition: transform 100ms ease-out;
+    transform-origin: bottom;
+}
+
+#on-off:checked + .blade {
+    transform: scaleY(0);
+}
+
+#on-off:not(:checked) + .blade {
+    transform: scaleY(1);
+}
